@@ -1,0 +1,20 @@
+Rooms:
+{'Field': 'id', 'Type': 'int', 'Null': 'NO', 'Key': 'PRI', 'Default': None, 'Extra': 'auto_increment'}
+{'Field': 'name', 'Type': 'varchar(50)', 'Null': 'YES', 'Key': '', 'Default': None, 'Extra': ''}
+{'Field': 'location', 'Type': 'varchar(50)', 'Null': 'YES', 'Key': '', 'Default': None, 'Extra': ''}
+{'Field': 'capacity', 'Type': 'int', 'Null': 'YES', 'Key': '', 'Default': None, 'Extra': ''}
+{'Field': 'division', 'Type': 'varchar(50)', 'Null': 'YES', 'Key': '', 'Default': None, 'Extra': ''}
+
+IT Tickets:
+{'Field': 'id', 'Type': 'int', 'Null': 'NO', 'Key': 'PRI', 'Default': None, 'Extra': 'auto_increment'}
+{'Field': 'booking_id', 'Type': 'int', 'Null': 'YES', 'Key': '', 'Default': None, 'Extra': ''}
+{'Field': 'issue_type', 'Type': 'varchar(100)', 'Null': 'YES', 'Key': '', 'Default': None, 'Extra': ''}
+{'Field': 'description', 'Type': 'text', 'Null': 'YES', 'Key': '', 'Default': None, 'Extra': ''}
+{'Field': 'status', 'Type': 'varchar(20)', 'Null': 'YES', 'Key': '', 'Default': 'Open', 'Extra': ''}
+
+Bookings:
+{'Field': 'id', 'Type': 'int', 'Null': 'NO', 'Key': 'PRI', 'Default': None, 'Extra': 'auto_increment'}
+{'Field': 'room_id', 'Type': 'int', 'Null': 'YES', 'Key': '', 'Default': None, 'Extra': ''}
+{'Field': 'username', 'Type': 'varchar(50)', 'Null': 'YES', 'Key': '', 'Default': None, 'Extra': ''}
+{'Field': 'start_time', 'Type': 'datetime', 'Null': 'YES', 'Key': '', 'Default': None, 'Extra': ''}
+{'Field': 'end_time', 'Type': 'datetime', 'Null': 'YES', 'Key': '', 'Default': None, 'Extra': ''}

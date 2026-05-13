@@ -1,0 +1,145 @@
+/* ═══════════════════════════════════════════════════════
+   PREMIUM UI ENHANCEMENTS
+   Ultra-modern glassmorphism, animations, and typography
+   ═══════════════════════════════════════════════════════ */
+
+/* --- 1. Animated Mesh Gradient Background --- */
+body::before {
+  content: "";
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200vw;
+  height: 200vh;
+  z-index: -1;
+  background: 
+    radial-gradient(circle at 15% 50%, rgba(99, 102, 241, 0.08), transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(168, 85, 247, 0.08), transparent 25%);
+  animation: backgroundShift 20s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+@keyframes backgroundShift {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-10%) scale(1.1); }
+}
+
+/* --- 2. Advanced Hover Physics & Shadows (Levitation) --- */
+.card, .glass-panel, .directory-card, .stat-card, .room-visual-card, .activity-item, .info-card {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::after, .glass-panel::after, .directory-card::after, .stat-card::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  opacity: 0.5;
+}
+
+.card:hover, .glass-panel:hover, .directory-card:hover, .stat-card:hover, .room-visual-card:hover, .info-card:hover {
+  transform: translateY(-6px) scale(1.01) !important;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2), 0 0 0 1px var(--accent-glow) !important;
+  z-index: 10;
+}
+
+body.light-theme .card:hover, body.light-theme .glass-panel:hover, body.light-theme .directory-card:hover, body.light-theme .stat-card:hover {
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08), 0 0 0 1px var(--accent-glow) !important;
+}
+
+/* --- 3. Shimmer Buttons --- */
+.btn--primary {
+  background: linear-gradient(110deg, var(--accent) 0%, var(--accent-dark) 40%, var(--accent-light) 50%, var(--accent-dark) 60%, var(--accent) 100%) !important;
+  background-size: 200% auto !important;
+  animation: shimmerButton 4s linear infinite !important;
+  border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+@keyframes shimmerButton {
+  from { background-position: 200% center; }
+  to { background-position: 0% center; }
+}
+
+.btn--primary:hover {
+  transform: scale(1.03) translateY(-2px) !important;
+  box-shadow: 0 8px 25px var(--accent-glow) !important;
+  filter: brightness(1.1);
+}
+
+/* --- 4. Page Entrance Animations --- */
+.page, .page-container, .dashboard-grid-layout {
+  animation: smoothReveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes smoothReveal {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- 5. Premium Input Focus Glow --- */
+.form-input:focus, .form-textarea:focus, .form-select:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px var(--accent-glow) !important;
+  border-color: var(--accent-light) !important;
+  background: var(--bg-hover) !important;
+}
+
+/* --- 6. Custom Elegant Scrollbar --- */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.3);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* --- 7. Sidebar Active Indicator Animation --- */
+.sidebar-link--active {
+  position: relative;
+  background: linear-gradient(90deg, var(--accent-glow) 0%, transparent 100%) !important;
+}
+.sidebar-link--active::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 4px;
+  left: 0;
+  top: 0;
+  background: var(--accent);
+  box-shadow: 0 0 10px var(--accent-light);
+  border-radius: 0 4px 4px 0;
+  animation: slideInLeft 0.3s ease-out forwards;
+}
+@keyframes slideInLeft {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+
+/* --- 8. Glowing Stat Visuals --- */
+.stat-icon {
+  position: relative;
+  z-index: 1;
+}
+.stat-icon::before {
+  content: "";
+  position: absolute;
+  inset: -10px;
+  border-radius: 50%;
+  background: inherit;
+  filter: blur(15px);
+  opacity: 0.3;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+}
+.stat-card:hover .stat-icon::before {
+  opacity: 0.6;
+}
